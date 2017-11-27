@@ -74,19 +74,6 @@ public class Main {
             }
         }
     }
-    /*
-        1 = 1
-        2 = 11
-        3 = 21
-        4 = 1211
-        5 = 111221
-        6 = 312211
-        7 = 13112221
-        8 = 1113213211
-        9 = 31131211131221
-        10 = 13211311123113112211
-        11 = 11131221133112132113212221
-     */
 
     public static String numSequence(int n) {
         StringBuilder sb = new StringBuilder();
