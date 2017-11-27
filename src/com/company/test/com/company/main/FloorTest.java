@@ -73,14 +73,16 @@ class FloorTest {
 
     @Test
     void getNextFloor() {
+        assertEquals(floor2, floor1.getNextFloor());
+        assertEquals(floor3, floor2.getNextFloor());
+        assertEquals(null, floor3.getNextFloor());
     }
 
     @Test
     void toStringTest() {
-    }
-
-    @Test
-    void setNextFloor() {
+        assertEquals("On floor number 1 ", floor1.toString());
+        assertEquals("On floor number 2 ", floor2.toString());
+        assertEquals("On floor number 3 ", floor3.toString());
     }
 
 }
