@@ -1,4 +1,6 @@
+package com.seanippolito;
 
+import com.seanippolito.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -71,7 +73,7 @@ class ParkingStructureTest {
         floors.add(floor3);
     }
 
-    static private ParkingStructure ps = ParkingStructure.newParkingStructure("Main", floors);
+    static private ParkingStructure ps = ParkingStructure.newParkingStructure("com.seanippolito.Main", floors);
 
     @Test
     void getFloor() {
@@ -130,7 +132,7 @@ class ParkingStructureTest {
 
     @Test
     void toStringTest() {
-        assertEquals("Main has the following spaces [On floor number 1 , On floor number 2 , On floor number 3 ]", ps.toString());
+        assertEquals("com.seanippolito.Main has the following spaces [On floor number 1 , On floor number 2 , On floor number 3 ]", ps.toString());
     }
 
 }

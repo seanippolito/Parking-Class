@@ -1,4 +1,7 @@
+package com.seanippolito;
 
+import com.seanippolito.Space;
+import com.seanippolito.SpaceType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,6 +27,10 @@ class SpaceTest {
 
     @Test
     void setNextSpace() {
+        oneSpace.setNextSpace(twoSpaces);
+        twoSpaces.setNextSpace(threeSpaces);
+        threeSpaces.setNextSpace(fourSpaces);
+
         assertEquals(twoSpaces, oneSpace.getNextSpace());
         assertEquals(threeSpaces, twoSpaces.getNextSpace());
         assertEquals(fourSpaces, threeSpaces.getNextSpace());

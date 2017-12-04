@@ -1,3 +1,4 @@
+package com.seanippolito;
 
 import java.util.LinkedList;
 
@@ -15,7 +16,7 @@ enum SpaceType {
 }
 
 /*
-    ParkingStructure class
+    com.seanippolito.ParkingStructure class
     Stores Floorlist and title of garage.
     Special method returns nearest spot in the garage.
  */
@@ -38,7 +39,7 @@ class ParkingStructure {
                 return f;
             }
         }
-        System.err.println("Invalid Floor Number");
+        System.err.println("Invalid com.seanippolito.Floor Number");
         return null;
     }
 
@@ -118,7 +119,7 @@ class ParkingStructure {
 class FloorList extends LinkedList<Floor> {}
 
 /*
-    Floor Class
+    com.seanippolito.Floor Class
     Keeps track of the current floor, number of spaces on the floor, and spaces list
  */
 class Floor {
@@ -150,7 +151,7 @@ class Floor {
                 return s;
             }
         }
-        System.err.println("Invalid Space Number");
+        System.err.println("Invalid com.seanippolito.Space Number");
         return null;
     }
 

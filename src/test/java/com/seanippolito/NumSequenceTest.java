@@ -1,3 +1,4 @@
+package com.seanippolito;
 
 import org.junit.jupiter.api.Test;
 

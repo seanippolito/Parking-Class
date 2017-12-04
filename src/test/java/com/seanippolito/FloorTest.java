@@ -1,4 +1,9 @@
+package com.seanippolito;
 
+import com.seanippolito.Floor;
+import com.seanippolito.Space;
+import com.seanippolito.SpaceType;
+import com.seanippolito.SpacesList;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

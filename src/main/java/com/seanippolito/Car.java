@@ -1,3 +1,5 @@
+package com.seanippolito;
+
 /*
     Simple car class with type and nearest spot in garage.
  */

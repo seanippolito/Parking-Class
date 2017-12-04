@@ -1,3 +1,6 @@
+package com.seanippolito;
+
+import com.seanippolito.Car;
 
 import java.util.*;
 
@@ -52,7 +55,7 @@ public class Main {
         }
 
         //Build parking structure with floors list
-        ParkingStructure ps = ParkingStructure.newParkingStructure("Main Structure", floors);
+        ParkingStructure ps = ParkingStructure.newParkingStructure("com.seanippolito.Main Structure", floors);
 
         //run forever to allow for easy testing without restarting program. Remove loop after.
         while(true) {
