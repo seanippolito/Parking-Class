@@ -1,4 +1,3 @@
-package com.company.main;
 
 import java.util.LinkedList;
 

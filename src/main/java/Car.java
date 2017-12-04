@@ -1,4 +1,3 @@
-package com.company.main;
 /*
     Simple car class with type and nearest spot in garage.
  */

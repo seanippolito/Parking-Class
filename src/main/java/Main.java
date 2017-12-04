@@ -1,14 +1,9 @@
-package com.company.main;
 
 import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        //Anant's problem
-        //System.out.println(numSequence(11));
-
 
         // write your code here
         Scanner kb = new Scanner(System.in);
@@ -73,36 +68,6 @@ public class Main {
                 System.out.println("No available spaces in garage!");
             }
         }
-    }
-
-    public static String numSequence(int n) {
-        StringBuilder sb = new StringBuilder();
-        if(n < 1) { return "0";}
-        if(n == 1) {
-            return Integer.toString(n);
-        }
-        sb.append("1");
-        for(int i = 2; i <= n; i++){
-            int count = 1;
-            char prev_char = sb.charAt(0);
-            int start = 0;
-            for(int j = 1; j < sb.length(); j++){
-                if(prev_char == sb.charAt(j)){
-                    count++;
-                } else {
-                    char temp = sb.charAt(j);
-                    int oldLen = sb.length();
-                    sb.replace(start, j, Integer.toString(count) + prev_char); //121
-                    int newLen = sb.length();
-                    j = j + newLen - oldLen;
-                    count = 1;
-                    start = j;
-                    prev_char = temp;
-                }
-            }
-            sb.replace(start, sb.length(), Integer.toString(count) + prev_char);
-        }
-        return sb.toString();
     }
 }
 
