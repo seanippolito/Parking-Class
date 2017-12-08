@@ -1,8 +1,8 @@
-com/seanippolito/SpacesList.class
-com/seanippolito/Car.class
-com/seanippolito/Space.class
-com/seanippolito/Floor.class
-com/seanippolito/FloorList.class
-com/seanippolito/SpaceType.class
-com/seanippolito/Main.class
-com/seanippolito/ParkingStructure.class
+com\seanippolito\Car.class
+com\seanippolito\ParkingStructure.class
+com\seanippolito\Main.class
+com\seanippolito\SpacesList.class
+com\seanippolito\FloorList.class
+com\seanippolito\SpaceType.class
+com\seanippolito\Floor.class
+com\seanippolito\Space.class
