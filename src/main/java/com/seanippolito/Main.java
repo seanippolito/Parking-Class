@@ -2,35 +2,37 @@ package com.seanippolito;
 
 import com.seanippolito.Car;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) {
-
         // write your code here
         Scanner kb = new Scanner(System.in);
-        System.out.println("How many floors are available in your parking structure? Input: [Number]");
-        int numFloors = kb.nextInt();
+
+        Properties prop = new Properties();
+        try {
+            prop.load(new FileInputStream("resources/config.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        int numFloors = Integer.parseInt(prop.getProperty("numOfFloors"));
         FloorList floors = new FloorList();
 
         //Loop through floors starting at 1
         for(int floorNum = 1; floorNum <= numFloors; floorNum++){
-            System.out.println("How many spaces are available on floor number " + floorNum + "? Input: [Number]");
-            int numSpaces = kb.nextInt();
+            int numSpaces = Integer.parseInt(prop.getProperty("numOfSpaces" + Integer.toString(floorNum)));
             SpacesList spaces = new SpacesList();
+            String[] allSpaces = prop.getProperty("spaces" + Integer.toString(floorNum)).split(",");
 
-            System.out.println("Please insert spaces in structure in the following format: Input: [Type, Number] ");
-            System.out.println("Types available: SPECIAL_NEEDS, ELECTRIC, COMPACT, EXPECTANT_MOTHER, REGULAR, MOTORCYCLE");
-
+            int spaceWalker = 0;
             //Create the spaces list for the current floor
             for (int spaceNum = 1; spaceNum <= numSpaces; spaceNum++) {
-                String type = kb.next();
-                //Accept input determining if space is available
-                String avail = kb.next();
+                String type = allSpaces[spaceWalker++];
+                String avail = allSpaces[spaceWalker++];
                 boolean isAvail = avail.toLowerCase().equals("yes");
-                //Get number for space starting with floor number followed by space number.
-//                int number = Integer.valueOf(String.valueOf(floorNum) + String.valueOf(spaceNum));
 
                 //Create Space instances and add pointers for linkedlist and easy traversal
                 if (spaces.isEmpty()) {
@@ -55,7 +57,7 @@ public class Main {
         }
 
         //Build parking structure with floors list
-        ParkingStructure ps = ParkingStructure.newParkingStructure("com.seanippolito.Main Structure", floors);
+        ParkingStructure ps = ParkingStructure.newParkingStructure("Main Structure", floors);
 
         //run forever to allow for easy testing without restarting program. Remove loop after.
         while(true) {
@@ -73,64 +75,3 @@ public class Main {
         }
     }
 }
-
-/*
-Input test case:
-3
-30
-expectant_mother no
-special_needs no
-special_needs no
-electric no
-electric yes
-electric no
-compact yes
-compact no
-motorcycle yes
-regular no
-compact no
-regular yes
-compact no
-regular no
-regular no
-expectant_mother no
-special_needs no
-special_needs no
-electric no
-electric yes
-electric no
-compact yes
-compact no
-motorcycle yes
-regular no
-compact no
-regular yes
-compact no
-regular no
-regular no
-15
-expectant_mother no
-special_needs no
-special_needs no
-electric no
-electric no
-electric no
-compact no
-compact no
-motorcycle no
-regular no
-compact no
-regular no
-compact no
-regular no
-regular no
-5
-expectant_mother yes
-special_needs no
-special_needs no
-electric no
-electric yes
-compact 12
-motorcycle 34
-regular 22
- */
