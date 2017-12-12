@@ -1,13 +1,16 @@
 package com.seanippolito;
-
-import com.seanippolito.Car;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+
         // write your code here
         Scanner kb = new Scanner(System.in);
 
