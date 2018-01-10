@@ -1,11 +1,6 @@
-package com.seanippolito;
-
+package com.seanippolito.parking;
 import java.util.LinkedList;
 
-/*
-    Enum for Type of car :
-    Special needs, electric vehicle, compact, expectant mother, regular, motorcycle
- */
 enum SpaceType {
     SPECIAL_NEEDS,
     ELECTRIC,
@@ -15,12 +10,7 @@ enum SpaceType {
     MOTORCYCLE
 }
 
-/*
-    com.seanippolito.ParkingStructure class
-    Stores Floorlist and title of garage.
-    Special method returns nearest spot in the garage.
- */
-class ParkingStructure {
+public class ParkingStructure {
     private String title;
     private FloorList floors;
 
@@ -43,7 +33,6 @@ class ParkingStructure {
         return null;
     }
 
-    // Find the available space closest to your car for your cars type
     public Space findNearestSpace(Car car){
         Space curSpace = null;
         Floor curFloor = null;
@@ -231,3 +220,4 @@ class Space{
         return this.type + " space open at spot number " + number + "!";
     }
 }
+
